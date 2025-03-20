@@ -4,6 +4,28 @@ typedef struct Node{
     int data;
     struct Node* next;
 } Node;
+Node* head = NULL;
+void insertNodeInBeg(int ele){
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->next = ele;
+    newNode->next = NULL;
+    newNode->next = head;
+    head = newNode;
+    printf("Node Inserted !!!\n");
+
+}
+void display(){
+    if(head == NULL)
+    printf("List is empty !!!\n");
+    else{
+        Node* temp = head;
+        while(temp != NULL){
+            printf("%d", temp->data);
+            temp = temp->next;
+
+    }
+}
+}
 int main(){
     while(1){
         printf("----Single Linked List-----\n");
@@ -17,11 +39,14 @@ int main(){
         printf("8. Sort elements\n");
         printf("9. Display list\n");
         printf("10. exit\n");
-        int choice;
+        int choice, value;
         printf("Enter choice:");
         scanf("%d", &choice);
         switch(choice){
             case 1:
+            printf("enter value: ")
+            scanf("%d", &value);
+            insertNodeInBeg(value);
             break;
             case 2:
             break;
@@ -48,3 +73,11 @@ int main(){
     }
     return 0;
 }
+ //Algo
+ //1. Create a node
+ //2. Check if linked list is empty or not
+ //3. If linked list is empty, then assign the address of new node to head
+ //4. If linked list is not empty, then assign the value of head in newNode->next = head 
+ //b) Assign the address of newNode to 
+
+ //Algo : Traversing
